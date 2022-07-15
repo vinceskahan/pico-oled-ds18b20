@@ -19,23 +19,25 @@
 #
 #       GND       DATA          VCC
 #        X----------X------------X
+#        |          |            |
+#        |          |    4.7k    |
 #        |          |--resistor--|
 #        |          |            |
 #              (to sensor)
 #              (to sensor)
 #
 # on the pico:
-#    pin  0 to SDA on the OLED
-#    pin  1 to SCL on the OLED
-#    pin  4 to data on the DS18b20(s)
-#    pin 37 to 3.3V power rail
-#    pin 38 to ground rail
+#    GPIO0     pin  1 to SDA on the OLED
+#    GPIO1     pin  2 to SCL on the OLED
+#    GPIO4     pin  6 to data on the DS18b20(s)
+#    3V3i(OUT) pin 37 to 3.3V power rail
+#    GND       pin 38 to ground rail
 #
 # on the I2C OLED:
 #    VCC to 3.3V power rail
 #    GND to ground rail
-#    SCL to pin 1 on the pico
-#    SDA to pin 0 on the pico
+#    SCL to GPIO1 pin 2 on the pico
+#    SDA to GPIO0 pin 1 on the pico
 #
 # credits:
 #    - this is based on a bunch of howto pages on Internet
