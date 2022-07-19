@@ -59,10 +59,13 @@ def display_ds_temp(string_ds_temperature):
     utime.sleep(5)
 
 def display_temp(string_temperature):
-    lcd.text(string_temperature,15, 20, 1)
+    # refresh occasionally to show program is running
     lcd.clear()
     lcd.show()
-    utime.sleep(2)
+    utime.sleep(1)
+    lcd.text(string_temperature,15, 20, 1)
+    lcd.show()
+    utime.sleep(5)
 
 def read_ds_temp():
     roms = ds_sensor.scan()
